@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --background-dark: #0F1115;
+    --surface-card: rgba(255, 255, 255, 0.04);
+    --primary-accent: #6E5BFF;
+    --secondary-accent: #00C4FF;
+    --muted-text: #A6B0C3;
+    --success: #22C55E;
+    --danger: #EF4444;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button {
+    transition: all 0.2s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.tab-button.active {
+    background: rgba(110, 91, 255, 0.12);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.36s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.idea-card {
+    will-change: transform, opacity;
+    animation: slideUp 0.48s cubic-bezier(0.16, 0.84, 0.28, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tab-content, .idea-card {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

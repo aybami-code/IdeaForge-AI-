@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdeaForge UI+AI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            background: '#0F1115',
+                            surface: 'rgba(255,255,255,0.04)',
+                            primary: '#6E5BFF',
+                            secondary: '#00C4FF',
+                            muted: '#A6B0C3',
+                            success: '#22C55E',
+                            danger: '#EF4444'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-background text-white font-sans min-h-screen">
+    <custom-header></custom-header>
+    
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+        <section class="hero mb-16">
+            <div class="glass-card p-8 rounded-xl">
+                <h1 class="text-4xl font-bold mb-4">Generate Startup Ideas <span class="text-dark-primary">That Work</span></h1>
+                <p class="text-dark-muted text-lg mb-8">Our AI analyzes market gaps and delivers validated business concepts with full execution plans.</p>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <input type="text" placeholder="Describe your interest area..." class="flex-grow bg-dark-surface text-white px-6 py-4 rounded-xl focus:ring-2 focus:ring-dark-primary focus:outline-none transition-all duration-200">
+                    <button class="bg-gradient-to-r from-dark-primary to-[#5B7BFD] text-white px-8 py-4 rounded-xl font-semibold hover:scale-[1.03] hover:-translate-y-0.5 transition-transform duration-200 focus:outline-none focus:ring-3 focus:ring-dark-primary/20">
+                        Generate Ideas
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="tabs mb-12">
+            <div class="flex gap-2 mb-6">
+                <button class="tab-button active px-6 py-3 rounded-full bg-dark-surface text-dark-primary font-medium">Market Breakdown</button>
+                <button class="tab-button px-6 py-3 rounded-full bg-dark-surface text-dark-muted font-medium">Opportunity Gaps</button>
+                <button class="tab-button px-6 py-3 rounded-full bg-dark-surface text-dark-muted font-medium">Product Ideas</button>
+            </div>
+            
+            <div class="tab-content active">
+                <div class="glass-card p-8 rounded-xl">
+                    <h2 class="text-2xl font-bold mb-6">Market Intelligence</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-dark-surface/50 p-6 rounded-xl border-l-4 border-dark-primary">
+                            <h3 class="font-bold mb-3">Current Landscape</h3>
+                            <p class="text-dark-muted">Analysis of existing solutions and their limitations in your target market.</p>
+                        </div>
+                        <div class="bg-dark-surface/50 p-6 rounded-xl border-l-4 border-dark-secondary">
+                            <h3 class="font-bold mb-3">User Pains</h3>
+                            <p class="text-dark-muted">Verified frustrations and unmet needs from real potential customers.</p>
+                        </div>
+                        <div class="bg-dark-surface/50 p-6 rounded-xl border-l-4 border-dark-success">
+                            <h3 class="font-bold mb-3">Emerging Trends</h3>
+                            <p class="text-dark-muted">Technological and behavioral shifts creating new opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="results">
+            <h2 class="text-2xl font-bold mb-6">Generated Ideas</h2>
+            <div class="grid gap-6">
+                <div class="idea-card glass-card p-6 rounded-xl opacity-0 translate-y-4">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold">AI-Powered Market Gap Analyzer</h3>
+                        <span class="bg-dark-primary/20 text-dark-primary px-3 py-1 rounded-full text-sm font-medium">Tech</span>
+                    </div>
+                    <p class="text-dark-muted mb-4">Automated system that scans emerging markets and identifies underserved needs with revenue potential scoring.</p>
+                    <div class="flex gap-2">
+                        <span class="bg-dark-surface px-3 py-1 rounded-full text-sm">B2B SaaS</span>
+                        <span class="bg-dark-surface px-3 py-1 rounded-full text-sm">$29/mo</span>
+                        <span class="bg-dark-surface px-3 py-1 rounded-full text-sm">4.2x ROI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
